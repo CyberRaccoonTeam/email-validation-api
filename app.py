@@ -11,7 +11,7 @@ import uuid
 import hashlib
 import socket
 from datetime import datetime
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import sqlite3
 
@@ -186,6 +186,10 @@ def validate_email(email, check_smtp=False):
     return result
 
 # Routes
+@app.route('/landing')
+def landing():
+    return render_template('landing.html')
+
 @app.route('/')
 def index():
     return jsonify({
