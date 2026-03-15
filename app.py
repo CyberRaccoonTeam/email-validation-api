@@ -22,7 +22,9 @@ except ImportError:
     DNS_AVAILABLE = False
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'email-validation-secret-2026')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+if not app.config['SECRET_KEY']:
+    raise RuntimeError("SECRET_KEY environment variable is required")
 CORS(app)
 
 DATABASE = 'email_validation.db'
