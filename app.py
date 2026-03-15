@@ -291,6 +291,6 @@ def health():
     })
 
 if __name__ == '__main__':
-    print('📧 Email Validation API starting on port 5561...')
+    print('📧 Email Validation API starting on port 5560...')
     print(f'   DNS resolution: {"✅ Available" if DNS_AVAILABLE else "❌ Install dnspython"}')
-    app.run(host='0.0.0.0', port=5561, debug=True)
+    app.run(host='0.0.0.0', port=5560, debug=True)
